@@ -1,0 +1,17 @@
+# Fichiers inutiles ou sensibles
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Environnement virtuel local
+.venv/
+.env
+
+# Git
+.git/
+.gitignore
+
+# Cache et logs
+*.log
+*.sqlite3
