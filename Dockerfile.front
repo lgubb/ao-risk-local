@@ -1,0 +1,20 @@
+# Dockerfile.front
+FROM node:20-alpine
+
+WORKDIR /app
+
+# Allow overriding public API base at build time
+ARG NEXT_PUBLIC_API_BASE=/api
+ENV NEXT_PUBLIC_API_BASE=${NEXT_PUBLIC_API_BASE}
+
+COPY frontend/package*.json ./
+# Installer toutes les deps pour builder, puis réduire à prod
+RUN npm install
+
+COPY frontend/. .
+
+RUN npm run build && npm prune --production
+
+EXPOSE 3000
+
+CMD ["npm", "start"]

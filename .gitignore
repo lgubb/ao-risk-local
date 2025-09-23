@@ -2,3 +2,44 @@ __pycache__/
 .env
 .DS_Store
 chroma_db/
+frontend/.env.local
+
+# App generated data
+storage/
+
+# Python artifacts
+*.py[cod]
+*.pyd
+*.pyo
+*.egg-info/
+*.eggs/
+build/
+dist/
+pip-wheel-metadata/
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+htmlcov/
+
+# Frontend (Next.js)
+frontend/node_modules/
+frontend/.next/
+frontend/out/
+frontend/.turbo/
+frontend/.env*
+!frontend/.env.local.example
+frontend/npm-debug.log*
+
+# Logs
+*.log
+logs/
+
+# IDE/OS
+.vscode/
+.idea/
+Thumbs.db
+frontend/.env.local

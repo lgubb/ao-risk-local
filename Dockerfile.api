@@ -1,0 +1,27 @@
+# Utilise une image Python légère
+FROM python:3.10-slim
+
+# Installer dépendances système nécessaires (PDF, Word, Cairo…)
+RUN apt-get update && apt-get install -y \
+    libpango-1.0-0 \
+    libpangocairo-1.0-0 \
+    libcairo2 \
+    libffi-dev \
+    shared-mime-info \
+ && rm -rf /var/lib/apt/lists/*
+
+WORKDIR /code
+
+# Dépendances Python
+COPY requirements.txt ./
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Code source (backend et éventuels utilitaires)
+COPY . .
+
+ENV PYTHONUNBUFFERED=1 \
+    PYTHONPATH=/code
+
+EXPOSE 8000
+
+CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]

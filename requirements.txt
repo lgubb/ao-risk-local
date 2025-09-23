@@ -8,6 +8,10 @@ httpx
 # extraction fichiers
 pdfplumber==0.11.0
 python-docx==1.1.0
+pytesseract
+pdf2image
+Pillow
+
 
 python-jose[cryptography]
 passlib
@@ -15,3 +19,17 @@ bcrypt==4.0.1
 
 
 chromadb
+
+sentence-transformers
+torch
+
+
+protobuf
+sentencepiece
+tiktoken
+
+weasyprint
+jinja2
+openpyxl
+
+rank-bm25
