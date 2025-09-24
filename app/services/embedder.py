@@ -8,8 +8,6 @@ def generate_embeddings(chunks: List[str]) -> List[List[float]]:
     """Génère les embeddings pour une liste de chunks."""
     return model.encode(
         chunks,
-        truncate=True,
-        max_length=512,
         batch_size=8
     ).tolist()
 
